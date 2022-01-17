@@ -2,3 +2,5 @@ config/local.neon
 /vendor
 /.idea
 /temp/cache
+/www/css/bootstrap.css
+/www/css/bootstrap.css.map
