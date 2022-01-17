@@ -9,6 +9,9 @@ application:
 
 session:
 	expiration: 28 days
+	savePath: '%tempDir%/sessions'
+	autoStart: true
+	cookieSamesite: Lax
 
 
 di:
