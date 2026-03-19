@@ -1,0 +1,10 @@
+.git
+.gitignore
+.idea
+*.md
+temp/*
+!temp/.gitignore
+log/*
+!log/.gitignore
+node_modules
+vendor
