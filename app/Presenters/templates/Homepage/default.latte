@@ -66,7 +66,8 @@
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">JavaScript</span>
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">TypeScript</span>
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Vue.js</span>
-                    <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Tailwind CSS</span>
+                    <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Tailwind</span>
+                    <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Bootstrap</span>
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Docker</span>
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Git</span>
                     <span class="px-4 py-2 bg-dark rounded-lg text-gray-300">Playwright</span>
@@ -169,46 +170,146 @@
     <div class="max-w-6xl mx-auto px-6">
         <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Portfolio</h2>
         
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {* Běh Hoštkou *}
             <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
-                <div class="h-48 bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center">
-                    <span class="text-gray-500">Screenshot projektu</span>
+                <div class="h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-orange-400/50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Název projektu</h3>
+                    <h3 class="text-xl font-semibold mb-2">Běh Hoštkou</h3>
                     <p class="text-gray-400 mb-4">
-                        Krátký popis projektu a jeho hlavních funkcí.
+                        Webová aplikace pro lokální běžecký závod s online registrací, správou výsledků a aktualitami.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP 8.5</span>
                         <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Nette</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Bootstrap</span>
                         <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">MySQL</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Docker</span>
                     </div>
-                    <a href="#" class="text-primary hover:underline">Zobrazit detail →</a>
+                    <a href="https://beh-hostkou.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
                 </div>
             </div>
             
+            {* Chalupa Babí *}
             <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
-                <div class="h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center">
-                    <span class="text-gray-500">Screenshot projektu</span>
+                <div class="h-48 bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-green-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">Název projektu</h3>
+                    <h3 class="text-xl font-semibold mb-2">Chalupa Babí 113</h3>
                     <p class="text-gray-400 mb-4">
-                        Krátký popis projektu a jeho hlavních funkcí.
+                        Prezentační web s online rezervačním systémem pro pronájem rekreační chalupy v Krkonoších.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Vue.js</span>
-                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">TypeScript</span>
-                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">API</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP 8.5</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Nette</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Bootstrap</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">MySQL</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Docker</span>
                     </div>
-                    <a href="#" class="text-primary hover:underline">Zobrazit detail →</a>
+                    <a href="https://chalupababi113.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
+                </div>
+            </div>
+            
+            {* Krby a kamna Mělník *}
+            <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
+                <div class="h-48 bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-amber-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Krby a kamna Mělník</h3>
+                    <p class="text-gray-400 mb-4">
+                        Moderní prezentační web s galerií realizací pro firmu specializující se na kachlová kamna a krby.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Vanilla JS</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Custom CSS</span>
+                    </div>
+                    <a href="https://krbykamna-melnik.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
+                </div>
+            </div>
+            
+            {* Kašpárek Mělník *}
+            <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
+                <div class="h-48 bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-pink-400/50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.01 2.01 0 0018.06 7h-.12c-.79 0-1.51.47-1.83 1.19L14.5 12h-1.53c-.53 0-.96.43-.96.96V22h2v-7h2v7h4zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zm1.5 1h-2.84c-.59 0-1.12.35-1.35.89L8.5 16.5H7v-1.31c0-.29-.24-.53-.53-.53H5.5c-.29 0-.53.24-.53.53V22h2v-4h1.31c.29 0 .53-.24.53-.53v-.78l.87-1.78h.68L9.5 22h2l.92-5.44L14 18v4h2v-5.5l-1.43-1.83.63-1.55c.18-.03.37-.06.57-.09L14 12.5zM6 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Kašpárek Mělník</h3>
+                    <p class="text-gray-400 mb-4">
+                        Komplexní web pro rodinné centrum s administrací aktivit, táborů a online registracemi.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP 8.4</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Nette</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Bootstrap</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">MySQL</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Docker</span>
+                    </div>
+                    <a href="http://www.kasparek-melnik.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
+                </div>
+            </div>
+            
+            {* ZŠ Jungmannovy sady *}
+            <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
+                <div class="h-48 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-blue-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">ZŠ Jungmannovy sady</h3>
+                    <p class="text-gray-400 mb-4">
+                        Webové stránky základní školy s redakčním systémem pro správu aktualit, blogu a programu.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP 8.1</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Nette</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Bootstrap</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">MySQL</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Docker</span>
+                    </div>
+                    <a href="https://www.zsjungsady.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
+                </div>
+            </div>
+            
+            {* Stano Bistro *}
+            <div class="group bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition">
+                <div class="h-48 bg-gradient-to-br from-yellow-500/20 to-red-500/20 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-yellow-400/50" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 15c0-4.625-3.507-8.441-8-8.941V4h-2v2.059c-4.493.5-8 4.316-8 8.941v2h18v-2zM4.31 15C4.817 11.166 8.07 8.182 12 8.182S19.183 11.166 19.69 15H4.31zM1 18h22v2H1z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Stano Bistro</h3>
+                    <p class="text-gray-400 mb-4">
+                        Prezentační web pro bistro s galerií a administrací menu.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">PHP 8.5</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Nette</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Bootstrap</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">MySQL</span>
+                        <span class="px-3 py-1 text-sm bg-darker rounded-full text-gray-400">Docker</span>
+                    </div>
+                    <a href="https://stano-bistro.cz/" target="_blank" class="text-primary hover:underline">Navštívit web →</a>
                 </div>
             </div>
         </div>
         
         <p class="text-center text-gray-500 mt-8">
-            Další projekty na vyžádání
+            Další projekty a reference na vyžádání
         </p>
     </div>
 </section>
