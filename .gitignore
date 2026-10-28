@@ -1,6 +1,17 @@
-config/local.neon
+# Dependencies
 /vendor
+
+# Local configuration
+config/local.neon
+.env
+
+# Docker
+docker-compose.override.yml
+
+# IDE
 /.idea
-/temp/cache
-/www/css/bootstrap.css
-/www/css/bootstrap.css.map
+/.vscode
+
+# OS
+.DS_Store
+Thumbs.db
