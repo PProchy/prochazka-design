@@ -1,0 +1,89 @@
+name: Deploy
+
+# Every push to main goes straight to production (there is no test environment);
+# a manual run (Actions -> Deploy -> Run workflow) redeploys the current main
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    # Never run two deploys at once
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+    env:
+      # Paths relative to the FTP account root, without leading/trailing slash
+      APP_DIR: ${{ vars.APP_DIR }}
+      DOCROOT_DIR: ${{ vars.DOCROOT_DIR }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction --no-progress
+
+      - name: Prepare build
+        run: |
+          mkdir -p build/app build/www
+          cp -r app config vendor build/app/
+          cp -r www/. build/www/
+          # User uploads (if any) live only on the server
+          rm -rf build/www/uploads
+
+          # On the server the app lives outside the document root,
+          # e.g. www/domains/example.com -> ../../../prochazka-design
+          up=$(echo "$DOCROOT_DIR" | sed 's#[^/][^/]*#..#g')
+          sed -i "s#'/../vendor/#'/$up/$APP_DIR/vendor/#" build/www/index.php
+          grep -F "'/$up/$APP_DIR/vendor/autoload.php'" build/www/index.php
+
+      - name: Upload application
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: build/app/
+          server-dir: ${{ vars.APP_DIR }}/
+          # Excluded files are never uploaded nor deleted: local.neon is managed
+          # by hand on the server, the example is for developers only.
+          # This replaces the action's default excludes (.git*, node_modules),
+          # which are not needed: the build contains only app, config and vendor.
+          exclude: |
+            config/local.neon*
+
+      - name: Upload document root
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: build/www/
+          server-dir: ${{ vars.DOCROOT_DIR }}/
+
+      # Production mode never checks for changed files, so stale DI container
+      # and Latte templates must be dropped. Rename first so no request reads
+      # a half-deleted cache.
+      - name: Clear cache
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get install -y -qq lftp
+          old="$APP_DIR/temp/cache-old-$GITHUB_RUN_ID"
+          lftp --env-password -u "$FTP_USERNAME" "$FTP_SERVER" -e "
+            set ftp:ssl-force true;
+            mv $APP_DIR/temp/cache $old;
+            rm -r -f $old;
+            bye"

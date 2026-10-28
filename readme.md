@@ -1,6 +1,6 @@
 # Procházka Design
 
-Osobní portfolio web - Ing. Pavel Procházka, full-stack vývojář.
+Personal portfolio website of Ing. Pavel Procházka, full-stack developer.
 
 ## Tech Stack
 
@@ -9,25 +9,35 @@ Osobní portfolio web - Ing. Pavel Procházka, full-stack vývojář.
 - Tailwind CSS
 - Docker
 
-## Instalace
+## Installation
 
 ```bash
 docker-compose build
 docker-compose up -d
 docker-compose exec web composer install
+cp config/local.neon.example config/local.neon   # debug mode for local development
 ```
 
-Web běží na `http://localhost:8080`
+The site runs at `http://localhost:8080`
 
-## Vývoj
+## Development
 
 ```bash
-# Spuštění
+# Start
 docker-compose up -d
 
-# Zastavení
+# Stop
 docker-compose down
 
-# Smazání cache
+# Clear cache
 docker-compose exec web rm -rf temp/cache/*
 ```
+
+## Deploy
+
+GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) uploads the site to WEDOS over FTPS.
+Every push to `main` goes straight to production; there is no test environment.
+A manual run (Actions → Deploy → Run workflow) redeploys the current `main`.
+
+The server has its own `config/local.neon` (not in git, never touched by the deploy).
+Paths and FTP credentials are set in GitHub → Settings → Environments → `production` (`APP_DIR`, `DOCROOT_DIR`, `FTP_*`).

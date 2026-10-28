@@ -1,0 +1,10 @@
+# Environment specific config, copy to local.neon (it is not in git).
+# The values below are for the local Docker setup. On the server the file
+# can stay empty (the site has no database); it must not enable debugMode.
+
+parameters:
+	debugMode: true
+
+
+services:
+	cache.storage: Nette\Caching\Storages\DevNullStorage
