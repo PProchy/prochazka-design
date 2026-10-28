@@ -1,4 +1,11 @@
-{block content}
-<h1 n:block=title>Oops...</h1>
+{block title}Chybný požadavek{/block}
+{block robots}noindex{/block}
 
-<p>Your browser sent a request that this server could not understand or process.</p>
+{block content}
+<section class="container error-page">
+	<p class="error-page__code">Ups</p>
+	<h1 class="error-page__title">Chybný požadavek</h1>
+	<p class="error-page__text">Prohlížeč poslal požadavek, který server nedokáže zpracovat.</p>
+	<p><a href="{$basePath}/" class="button button--primary">Zpět na úvod</a></p>
+</section>
+{/block}

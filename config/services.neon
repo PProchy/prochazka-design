@@ -1,2 +1,8 @@
 services:
 	- App\Router\RouterFactory::createRouter
+
+
+decorator:
+	App\Presenters\BasePresenter:
+		setup:
+			- setWwwDir(%wwwDir%)

@@ -1,6 +1,11 @@
+{block title}Stránka už neexistuje{/block}
+{block robots}noindex{/block}
+
 {block content}
-<h1 n:block=title>Page Not Found</h1>
-
-<p>The page you requested has been taken off the site. We apologize for the inconvenience.</p>
-
-<p><small>error 410</small></p>
+<section class="container error-page">
+	<p class="error-page__code">410</p>
+	<h1 class="error-page__title">Stránka už neexistuje</h1>
+	<p class="error-page__text">Tato stránka byla z webu trvale odstraněna.</p>
+	<p><a href="{$basePath}/" class="button button--primary">Zpět na úvod</a></p>
+</section>
+{/block}

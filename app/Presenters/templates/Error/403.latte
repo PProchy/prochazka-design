@@ -1,7 +1,11 @@
+{block title}Sem přístup nemáte{/block}
+{block robots}noindex{/block}
+
 {block content}
-<h1 n:block=title>Access Denied</h1>
-
-<p>You do not have permission to view this page. Please try contact the web
-site administrator if you believe you should be able to view this page.</p>
-
-<p><small>error 403</small></p>
+<section class="container error-page">
+	<p class="error-page__code">403</p>
+	<h1 class="error-page__title">Sem přístup nemáte</h1>
+	<p class="error-page__text">K zobrazení této stránky nemáte oprávnění.</p>
+	<p><a href="{$basePath}/" class="button button--primary">Zpět na úvod</a></p>
+</section>
+{/block}

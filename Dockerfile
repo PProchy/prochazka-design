@@ -15,8 +15,8 @@ RUN docker-php-ext-install zip intl gd
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Enable Apache mod_rewrite (Nette routing)
-RUN a2enmod rewrite
+# Enable Apache modules: rewrite (Nette routing), expires and headers (browser cache)
+RUN a2enmod rewrite expires headers
 
 # Set DocumentRoot to /var/www/html/www (Nette structure)
 ENV APACHE_DOCUMENT_ROOT /var/www/html/www

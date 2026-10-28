@@ -1,6 +1,11 @@
+{block title}Nepovolená metoda{/block}
+{block robots}noindex{/block}
+
 {block content}
-<h1 n:block=title>Method Not Allowed</h1>
-
-<p>The requested method is not allowed for the URL.</p>
-
-<p><small>error 405</small></p>
+<section class="container error-page">
+	<p class="error-page__code">405</p>
+	<h1 class="error-page__title">Nepovolená metoda</h1>
+	<p class="error-page__text">Požadovaná metoda není pro tuto adresu povolena.</p>
+	<p><a href="{$basePath}/" class="button button--primary">Zpět na úvod</a></p>
+</section>
+{/block}
